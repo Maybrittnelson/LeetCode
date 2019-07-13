@@ -3,18 +3,21 @@ package medium.string;
 public class LeetCode_791 {
 
     public String customSortString(String S, String T) {
-        int[] map = new int[26]; //idx: letter, element: cnt
+        //idx: letter, element: cnt. T max len is 200，so can use byte arr. but need change negative
+        byte[] map = new byte[26];
 
         for (char ch : T.toCharArray()) {
             int idx = ch - 'a';
-            map[idx] = map[idx] + 1;
+            map[idx] = (byte) (map[idx] + 1);
         }
 
         char[] res = new char[T.length()];
         int idx = 0;
         for (char ch : S.toCharArray()) {
             int tmp = ch - 'a';
-            int cnt = map[tmp];
+
+            //change negative
+            int cnt = b2i(map[tmp]);
             while (cnt > 0) {
                 res[idx] = ch;
                 cnt--;
@@ -24,7 +27,7 @@ public class LeetCode_791 {
         }
 
         for (int i = 0; i < map.length; i++) {
-            int cnt = map[i];
+            int cnt = b2i(map[i]);
             while (cnt > 0) {
                 res[idx] = (char) (i + 'a');
                 cnt--;
@@ -36,8 +39,13 @@ public class LeetCode_791 {
         return result;
     }
 
-    public static void main(String[] args) {
-        LeetCode_791 leetCode_791 = new LeetCode_791();
-        String s = leetCode_791.customSortString("cbafg", "abcd");
+    public int b2i(byte b) {
+        int i = b;
+        if (b < 0) {
+            i = (b + 128) + 128;
+        }
+        return i;
     }
+
+    
 }
