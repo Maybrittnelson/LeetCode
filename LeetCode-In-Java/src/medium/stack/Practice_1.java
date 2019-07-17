@@ -16,7 +16,7 @@ public class Practice_1 {
             int i2 = ss2.pop();
 
             int sum = i1 + i2 + hex;
-            if (sum > 10) {
+            if (sum >= 10) {
                 hex = 1;
                 result.add(sum % 10);
             } else {
@@ -25,8 +25,28 @@ public class Practice_1 {
             }
         }
 
-        add(hex, ss1, result);
-        add(hex, ss2, result);
+        Stack<Integer> last  = ss1.isEmpty() ? ss2 : ss1 ;
+
+        while (!last.isEmpty()) {
+            int i1 = last.pop();
+
+            if (hex > 0) {
+                int sum = i1 + hex;
+                if (sum >= 10) {
+                    result.add(sum - 10);
+                } else {
+                    hex = 0;
+                    result.add(sum);
+                }
+            } else {
+                result.add(i1);
+            }
+        }
+
+        //last hex
+        if (hex > 0) {
+            result.add(hex);
+        }
 
         StringBuilder sb = new StringBuilder();
         while (!result.isEmpty()) {
@@ -34,20 +54,6 @@ public class Practice_1 {
         }
 
         return sb.toString();
-    }
-
-    public void add(int hex, Stack<Integer> ss1, Stack<Integer> result) {
-        while (!ss1.isEmpty()) {
-            int i1 = ss1.pop();
-
-            int sum = hex + i1;
-            if (sum > 10) {
-                hex = 1;
-            } else {
-                hex = 0;
-            }
-            result.add(sum % 10);
-        }
     }
 
     public Stack<Integer> str2stack(String s) {
@@ -61,6 +67,7 @@ public class Practice_1 {
 
     public static void main(String[] args) {
         Practice_1 practice_1 = new Practice_1();
-        practice_1.add("111111111111111111111111111111111111111111", "111111111111111111111111111111111111111111");
+        String add = practice_1.add("18452543389943209752345473", "8123542678432986899334");
+        System.out.println(add);
     }
 }
