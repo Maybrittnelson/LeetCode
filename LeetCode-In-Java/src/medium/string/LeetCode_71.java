@@ -2,6 +2,7 @@ package medium.string;
 
 public class LeetCode_71 {
 
+    //
     public String simplifyPath(String path) {
 
         String result = "";
@@ -21,6 +22,7 @@ public class LeetCode_71 {
                 ignor--;
                 continue;
             }
+
             if (result.length() == 0) {
                 result = "/" + elems[i];
             } else {
