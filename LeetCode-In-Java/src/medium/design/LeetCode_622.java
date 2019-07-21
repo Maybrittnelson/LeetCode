@@ -8,6 +8,7 @@ package medium.design;
  */
 public class LeetCode_622 {
 
+    //arr
     static class MyCircularQueue {
 
         int[] arr;
@@ -64,4 +65,71 @@ public class LeetCode_622 {
             return idx == k - 1;
         }
     }
+
+    //list
+ /*  class Node {
+        int val;
+        Node next;
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+    Node front, rear;
+    int k;
+    int count;
+
+    public MyCircularQueue(int k) {
+        this.k = k;
+    }
+
+    public boolean enQueue(int value) {
+        if (count == k) {
+            return false;
+        }
+        count++;
+        Node cur = new Node(value);
+        if(front == null) {
+            front = cur;
+        } else {
+            rear.next = cur;
+        }
+        rear = cur;
+        return true;
+    }
+
+    public boolean deQueue() {
+        if (front == null) {
+            return false;
+        }
+
+        count--;
+        front = front.next;
+        if(front == null) {
+            rear = null;
+        }
+        return true;
+    }
+
+    public int Front() {
+        if (frot == null) {
+            return -1;
+        }
+
+        return front.val;
+    }
+
+    public int Rear() {
+        if (rear == null) {
+            return -1;
+        }
+        return rear.val;
+    }
+
+    public boolean isEmpty() {
+        return front == null;
+    }
+
+    public boolean isFull() {
+        return count == k;
+    }*/
 }
