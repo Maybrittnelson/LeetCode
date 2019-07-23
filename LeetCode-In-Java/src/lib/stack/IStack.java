@@ -1,4 +1,4 @@
-package medium.stack.practice;
+package lib.stack;
 
 public interface IStack<E> {
     void clear();

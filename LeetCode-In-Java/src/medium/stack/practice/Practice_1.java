@@ -1,5 +1,7 @@
 package medium.stack.practice;
 
+import lib.stack.LinkStack;
+
 import java.util.Stack;
 
 //two long string add

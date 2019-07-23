@@ -1,6 +1,8 @@
 package medium.stack.practice;
 
 
+import lib.stack.LinkStack;
+
 /**
  * 应用场景：
  *

@@ -1,4 +1,4 @@
-package medium.stack.practice;
+package lib.stack;
 
 /**
  * 应用场景：
