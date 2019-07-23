@@ -1,4 +1,4 @@
-package medium.BreathFirstSearch;
+package medium.breathFirstSearch;
 
 /**
  * 应用场景：

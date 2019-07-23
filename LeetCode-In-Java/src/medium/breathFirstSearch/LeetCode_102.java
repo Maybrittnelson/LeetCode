@@ -1,4 +1,4 @@
-package medium.BreathFirstSearch;
+package medium.breathFirstSearch;
 
 import lib.TreeNode;
 

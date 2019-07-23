@@ -1,4 +1,4 @@
-package medium.stack;
+package medium.stack.practice;
 
 import java.util.Stack;
 
@@ -6,8 +6,8 @@ import java.util.Stack;
 public class Practice_1 {
 
     public String add(String s1, String s2) {
-        Stack<Integer> ss1 = str2stack(s1);
-        Stack<Integer> ss2 = str2stack(s2);
+        LinkStack<Integer> ss1 = str2stack(s1);
+        LinkStack<Integer> ss2 = str2stack(s2);
 
         Stack<Integer> result = new Stack<>();
         int hex = 0;
@@ -25,7 +25,7 @@ public class Practice_1 {
             }
         }
 
-        Stack<Integer> last  = ss1.isEmpty() ? ss2 : ss1 ;
+        LinkStack<Integer> last  = ss1.isEmpty() ? ss2 : ss1 ;
 
         while (!last.isEmpty()) {
             int i1 = last.pop();
@@ -56,10 +56,10 @@ public class Practice_1 {
         return sb.toString();
     }
 
-    public Stack<Integer> str2stack(String s) {
-        Stack<Integer> ss = new Stack<>();
+    public LinkStack<Integer> str2stack(String s) {
+        LinkStack<Integer> ss = new LinkStack<>();
         for (char c : s.toCharArray()) {
-            ss.add(c - '0');
+            ss.push(c - '0');
         }
 
         return ss;
