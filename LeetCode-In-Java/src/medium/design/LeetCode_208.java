@@ -2,9 +2,13 @@ package medium.design;
 
 import java.util.HashMap;
 
+/**
+ * 128,264,416 + 3,147,624
+ * 131,412,040 byte= 125 M
+ */
 public class LeetCode_208 {
 
-    class Trie {
+    static class Trie {
         private TrieNode root;
 
         public Trie() {
@@ -57,5 +61,13 @@ public class LeetCode_208 {
     static class TrieNode {
         HashMap<Character, TrieNode> children = new HashMap<>();
         boolean isWord;
+    }
+
+    public static void main(String[] args) {
+        Trie trie = new Trie();
+        for (int i = 0; i < 50000; i++) {
+            trie.insert(Math.random() + i + "");
+        }
+        System.out.println();
     }
 }
