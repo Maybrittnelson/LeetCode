@@ -10,45 +10,43 @@ import java.util.Stack;
  * 应用场景：
  *
  * @author <a href="mailto:ge.sf.chn@gmail.com">shaofeng</a>
- * @since 2019/7/27
+ * @since 2019/7/28
  */
-public class LeetCode_94 {
+public class LeetCode_144 {
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root != null) {
             Stack<TreeNode> stack = new Stack<>();
             stack.push(root);
             while (!stack.isEmpty()) {
-                //traversal left node
-                while (stack.peek() != null) {
-                    stack.push(stack.peek().left);
-                }
-
-                stack.pop(); //remove null
-
-                if (!stack.isEmpty()) {
-                    root = stack.pop();
-                    //add root
-                    res.add(root.val);
-                    stack.push(root.right);
+                root = stack.pop();
+                res.add(root.val);
+                while (root != null) {
+                    if (root.left != null) {
+                        res.add(root.left.val);
+                    }
+                    if (root.right != null) {
+                        stack.add(root.right);
+                    }
+                    root = root.left;
                 }
             }
         }
         return res;
     }
 
-/*    List<Integer> res = new LinkedList<>();
-    //recursion
-    public List<Integer> inorderTraversal(TreeNode root) {
+/*    List<Integer> res = new ArrayList<>();
+
+    public List<Integer> preorderTraversal(TreeNode root) {
         recursion(root);
         return res;
     }
 
     public void recursion(TreeNode root) {
         if (root != null) {
-            recursion(root.left);
             res.add(root.val);
+            recursion(root.left);
             recursion(root.right);
         }
     }*/
