@@ -1,4 +1,4 @@
-package simple.Backtracing.recursion;
+package simple.backtracing.recursion;
 
 /**
  * TODO

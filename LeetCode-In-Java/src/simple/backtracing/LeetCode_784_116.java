@@ -1,4 +1,4 @@
-package simple.Backtracing;
+package simple.backtracing;
 
 import java.util.ArrayList;
 import java.util.List;

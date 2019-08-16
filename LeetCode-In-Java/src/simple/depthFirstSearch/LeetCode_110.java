@@ -1,9 +1,6 @@
-package simple.DepthFirstSearch;
+package simple.depthFirstSearch;
 
 import lib.TreeNode;
-
-import java.util.Comparator;
-import java.util.PriorityQueue;
 
 /**
  * 应用场景：

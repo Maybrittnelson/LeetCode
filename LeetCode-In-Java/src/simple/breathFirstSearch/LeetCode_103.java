@@ -1,4 +1,4 @@
-package simple.BreathFirstSearch;
+package simple.breathFirstSearch;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
