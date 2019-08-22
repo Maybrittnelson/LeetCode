@@ -7,7 +7,7 @@ package simple.dnamic;
  * @see
  * @since 2019/5/11
  */
-public class LeetCode_746_116 {
+public class LeetCode_746 {
 
     public int minCostClimbingStairs(int[] cost) {
         int[] dp = new int[cost.length + 1];

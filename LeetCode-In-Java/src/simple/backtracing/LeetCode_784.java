@@ -24,7 +24,7 @@ import java.util.List;
  * @see
  * @since 2019/5/10
  */
-public class LeetCode_784_116 {
+public class LeetCode_784 {
 
     List<String> list = new ArrayList<>();
 
