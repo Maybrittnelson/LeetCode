@@ -8,7 +8,9 @@ import java.util.List;
 public class LeetCode_95 {
 
     public List<TreeNode> generateTrees(int n) {
-
+        if (n == 0) {
+            return new ArrayList<TreeNode>();
+        }
         return genTrees(1, n);
     }
 
