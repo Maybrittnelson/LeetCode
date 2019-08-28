@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 下图是，以(0, 0)为起点遍历的过程
- * https://github.com/Maybrittnelson/LeetCode/blob/master/LeetCode-In-Java/src/img/IMG_1586.HEIC
+ * https://github.com/Maybrittnelson/LeetCode/blob/master/LeetCode-In-Java/src/mp4/51.mp4
  */
 public class LeetCode_51 {
 
